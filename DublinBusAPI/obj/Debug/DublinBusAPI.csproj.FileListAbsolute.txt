@@ -6,3 +6,10 @@ c:\users\jessica\documents\visual studio 2015\Projects\DublinBusAPI\DublinBusAPI
 C:\Users\Jessica\documents\visual studio 2015\Projects\DublinBusAPI\DublinBusAPI\bin\Debug\HtmlAgilityPack.dll
 C:\Users\Jessica\documents\visual studio 2015\Projects\DublinBusAPI\DublinBusAPI\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\Jessica\documents\visual studio 2015\Projects\DublinBusAPI\DublinBusAPI\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Jessica\Source\Repos\DublinBusAPI\DublinBusAPI\bin\Debug\DublinBusAPI.dll
+C:\Users\Jessica\Source\Repos\DublinBusAPI\DublinBusAPI\bin\Debug\DublinBusAPI.pdb
+C:\Users\Jessica\Source\Repos\DublinBusAPI\DublinBusAPI\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Jessica\Source\Repos\DublinBusAPI\DublinBusAPI\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Jessica\Source\Repos\DublinBusAPI\DublinBusAPI\obj\Debug\DublinBusAPI.csprojResolveAssemblyReference.cache
+C:\Users\Jessica\Source\Repos\DublinBusAPI\DublinBusAPI\obj\Debug\DublinBusAPI.dll
+C:\Users\Jessica\Source\Repos\DublinBusAPI\DublinBusAPI\obj\Debug\DublinBusAPI.pdb

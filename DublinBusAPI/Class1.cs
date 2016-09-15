@@ -33,6 +33,41 @@ namespace DublinBusAPI
                     }
                 }
             }
+            public static void getRequest(string sURL)
+            {
+                try
+                {
+                    Console.WriteLine("Get request:");
+                    WebRequest wrGETURL;
+                    wrGETURL = WebRequest.Create(sURL);
+                    Stream objStream;
+                    objStream = wrGETURL.GetResponse().GetResponseStream();
+                    StreamReader objReader = new StreamReader(objStream);
+              
+                string sLine = "";
+
+                while (sLine != null)
+                {
+                    sLine = objReader.ReadLine();
+                    if (sLine != null)
+                        Console.WriteLine(sLine);
+                }
+                    Console.Read();
+                }
+                catch (Exception ex)
+                {
+                    if (ex is System.Net.WebException)
+                    {
+                        Console.WriteLine("Website offline? Exception: " + ex);
+                    }
+                    else if (ex is System.UriFormatException)
+                    {
+                        Console.WriteLine("Wrong URL format! did you forget http:// ?  " + ex);
+                    }
+                    
+                }
+
+            }
            
         }
     }
