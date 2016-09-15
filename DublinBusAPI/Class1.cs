@@ -17,21 +17,44 @@ namespace DublinBusAPI
                 Console.WriteLine("Dublin Bus API Loaded...");
                 HtmlWeb hweb = new HtmlWeb();
                 Console.WriteLine("Connecting to RTPI...");
-                HtmlDocument doc = hweb.Load("http://www.rtpi.ie/Popup_Content/WebDisplay/WebDisplay.aspx?stopRef=" + stopno);
-                Console.WriteLine("Method 2: ");
-                foreach (HtmlNode table in doc.DocumentNode.SelectNodes("//div[@class='gridContainer']/table"))
+                HtmlDocument doc;
+                try
                 {
-                    Console.WriteLine("Found: " + table.Id);
-                    foreach (HtmlNode row in table.SelectNodes("tr"))
+                     doc = hweb.Load("http://www.rtpi.ie/Text/WebDisplay.aspx?stopRef=" + stopno);
+                    Console.WriteLine("Method 2: ");
+                    foreach (HtmlNode table in doc.DocumentNode.SelectNodes("//div[@class='gridContainer']/table"))
                     {
-                        Console.WriteLine("row");
-                        foreach (HtmlNode cell in row.SelectNodes("th|td"))
+                        Console.WriteLine("Found: " + table.Id);
+                        foreach (HtmlNode row in table.SelectNodes("tr"))
                         {
-                            Console.WriteLine("cell: " + cell.InnerText);
+                            Console.WriteLine("row");
+                            foreach (HtmlNode cell in row.SelectNodes("th|td"))
+                            {
+                                Console.WriteLine("cell: " + cell.InnerText);
+                            }
+                            Console.Read();
                         }
-                        Console.Read();
                     }
                 }
+                catch (Exception ex)
+                {
+                    if (ex is System.NullReferenceException)
+                    {
+                        doc = hweb.Load("http://www.rtpi.ie/Text/WebDisplay.aspx?stopRef=" + stopno);
+                        Console.WriteLine("Tables not found!");
+                        Console.WriteLine("Checking for system messages...");
+                        foreach (HtmlNode sysdiv in doc.DocumentNode.SelectNodes("//div[@id='PanelSystemMessage']/p"))
+                        {
+                            foreach (HtmlNode thing in sysdiv.SelectNodes("//p"))
+                            {
+                                Console.WriteLine(thing.InnerText);
+                               
+                            }
+                        }
+                    }
+                }
+                
+                 
             }
             public static void getRequest(string sURL)
             {
