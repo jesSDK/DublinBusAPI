@@ -45,11 +45,7 @@ namespace DublinBusAPI
                         Console.WriteLine("Checking for system messages...");
                         foreach (HtmlNode sysdiv in doc.DocumentNode.SelectNodes("//div[@id='PanelSystemMessage']/p"))
                         {
-                            foreach (HtmlNode thing in sysdiv.SelectNodes("//p"))
-                            {
-                                Console.WriteLine(thing.InnerText);
-                               
-                            }
+                                Console.Write(sysdiv.InnerText);
                         }
                     }
                 }
