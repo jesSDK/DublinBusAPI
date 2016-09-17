@@ -8,11 +8,11 @@ using HtmlAgilityPack;
 using System.Collections.Specialized;
 namespace DublinBusAPI
 {
-    public class Class1
+    public class DBUS
     {
-        public class init
+        public class functions
         {
-            public static StringCollection doinit(string stopno){
+            public static StringCollection GetRTPI(string stopno){
                 //html magic
                 Console.WriteLine("Dublin Bus API Loaded...");
                 HtmlWeb hweb = new HtmlWeb();
