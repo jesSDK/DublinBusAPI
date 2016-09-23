@@ -55,6 +55,7 @@ namespace DublinBusAPI
                         foreach (HtmlNode sysdiv in doc.DocumentNode.SelectNodes("//div[@id='PanelSystemMessage']/p"))
                         {
                                 Console.Write(sysdiv.InnerText);
+                            results.Add(sysdiv.InnerText);
                         }
                     }
                 }
